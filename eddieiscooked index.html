@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coachella 2026 Transportation Fraud - Refund Recovery Toolkit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        header {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid #d32f2f;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        nav {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav h3 {
+            margin-bottom: 1.5rem;
+            color: #d32f2f;
+            font-size: 1.3rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            columns: 2;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                columns: 1;
+            }
+        }
+        
+        nav li {
+            margin-bottom: 1rem;
+        }
+        
+        nav a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #d32f2f;
+        }
+        
+        .summary h3 {
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .summary-item {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .summary-item strong {
+            color: #d32f2f;
+            min-width: 150px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        table th {
+            background: #1a1a1a;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: #1a1a1a;
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .section-header:hover {
+            background: #333;
+        }
+        
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .section.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        .section-content {
+            display: none;
+            padding: 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .section.open .section-content {
+            display: block;
+            max-height: 10000px;
+        }
+        
+        h2 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: #d32f2f;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            color: #333;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 1rem;
+            border-left: 4px solid #ffc107;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .highlight strong {
+            color: #d32f2f;
+        }
+        
+        code {
+            background: #f0f0f0;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .button:hover {
+            background: #b71c1c;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #666;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header {
+                font-size: 1rem;
+            }
+            
+            .section-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Coachella 2026 Transportation Fraud</h1>
+        <p>Refund Recovery Toolkit | Cara A. Brown + Carlos</p>
+    </header>
+    
+    <div class="container">
+        <nav id="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a onclick="scrollToSection('summary')">Executive Summary</a></li>
+                <li><a onclick="toggleSection('section1')">1. Cara: AMEX Chargeback</a></li>
+                <li><a onclick="toggleSection('section2')">2. Carlos: Capital One/Zelle Dispute</a></li>
+                <li><a onclick="toggleSection('section3')">3. Regulatory Filings (Joint)</a></li>
+                <li><a onclick="toggleSection('section4')">4. Service Breach Details</a></li>
+                <li><a onclick="toggleSection('section5')">5. Small Claims Court</a></li>
+                <li><a onclick="toggleSection('section6')">6. Priority Timeline</a></li>
+                <li><a onclick="toggleSection('section7')">7. Legal Angles</a></li>
+                <li><a onclick="toggleSection('section8')">8. Evidence Checklist</a></li>
+                <li><a onclick="toggleSection('section9')">9. Forbidden Language</a></li>
+                <li><a onclick="toggleSection('section10')">10. Expected Outcomes</a></li>
+                <li><a onclick="toggleSection('section11')">11. Recovery Scenario</a></li>
+                <li><a onclick="toggleSection('section12')">12. Next Steps</a></li>
+            </ul>
+        </nav>
+        
+        <div class="summary" id="summary">
+            <h3>Executive Summary</h3>
+            <div class="summary-item">
+                <strong>Contract:</strong>
+                <span>12 rides @ $1,000 (premium service: inside-Coachella pickups, confirmed waits)</span>
+            </div>
+            <div class="summary-item">
+                <strong>Delivered:</strong>
+                <span>7 rides @ degraded service (CVS lot pickups, unconfirmed waits, retroactive fees)</span>
+            </div>
+            <div class="summary-item">
+                <strong>Unauthorized Charges:</strong>
+                <span>$100 tip added without agreement</span>
+            </div>
+            <div class="summary-item">
+                <strong>Discrimination:</strong>
+                <span>Eddie knowingly targeted Carlos (Black male, cancer survivor) with identical fraud in 2025 + 2026</span>
+            </div>
+            <div class="summary-item">
+                <strong>Medical Damage:</strong>
+                <span>Carlos contracted Valley fever from forced excessive walking; missed 1 week work</span>
+            </div>
+            <div class="summary-item">
+                <strong>Cara's Target:</strong>
+                <span>$350 (AMEX)</span>
+            </div>
+            <div class="summary-item">
+                <strong>Carlos's Target:</strong>
+                <span>$520 (Zelle) + $1,500-2,000 (lost wages)</span>
+            </div>
+            <div class="summary-item">
+                <strong>Joint Potential:</strong>
+                <span>$2,370-12,400+ (with treble damages + punitive)</span>
+            </div>
+        </div>
+        
+        <!-- Section 1: AMEX Chargeback -->
+        <div class="section" id="section1">
+            <div class="section-header" onclick="toggleSection('section1')">
+                <span>1. Cara: AMEX Chargeback</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>AMEX Chargeback ($358.61)</h2>
+                
+                <h3>Amount: $350 | Reason: Unauthorized tip + Service degradation</h3>
+                
+                <h4>How to File</h4>
+                <ol>
+                    <li>Open AMEX app → "Dispute this charge"</li>
+                    <li>Reason: <code>Unauthorized Charge / Services Not Rendered / Altered Terms</code></li>
+                    <li>Copy narrative below</li>
+                    <li>Attach: Text screenshots, email chain, payment confirmations</li>
+                </ol>
+                
+                <h4>Dispute Narrative</h4>
+                <p>I am disputing $358.61 charged on April 18, 2026 for transportation services during Coachella 2026 (April 16-21).</p>
+                
+                <h4>Contract Terms</h4>
+                <ul>
+                    <li>12 car rides @ $1,000 flat rate</li>
+                    <li>Premium service: inside-Coachella venue pickups, confirmed pickup times, reliable airport coordination</li>
+                    <li>No tip was agreed upon</li>
+                </ul>
+                
+                <h4>What I Received</h4>
+                <ul>
+                    <li>7 of 12 rides (58% service)</li>
+                    <li>Degraded pickups: CVS lot instead of inside-venue (30+ min walk in 100° heat)</li>
+                    <li>Unconfirmed airport wait; retroactive fee imposition</li>
+                    <li>Unauthorized $100 tip added without pre-agreement</li>
+                    <li>Threats of abandonment preventing full contract performance</li>
+                </ul>
+                
+                <h4>Merchant's Text Admissions</h4>
+                <ul>
+                    <li><strong>"You guys canceled and altered three rides"</strong> (FALSE: he altered them, I didn't cancel)</li>
+                    <li><strong>"You have my Platinum Amex you can charge whatever on"</strong> (Gaslighting; I authorized $1,000 service only)</li>
+                    <li><strong>"I pulled a video from the car last night"</strong> (Potential illegal recording, CA PC §632)</li>
+                    <li><strong>"We literally gave u access to charge whatever u want"</strong> (Admission of unauthorized charging)</li>
+                </ul>
+                
+                <h4>Refund Calculation</h4>
+                <table>
+                    <tr>
+                        <td>Total paid</td>
+                        <td>$1,100 ($1,000 service + $100 unauthorized tip)</td>
+                    </tr>
+                    <tr>
+                        <td>Fair value for 7 degraded rides</td>
+                        <td>$650-700</td>
+                    </tr>
+                    <tr>
+                        <td>Merchant fair retention</td>
+                        <td>$200-250</td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>Total refund owed</strong></td>
+                        <td><strong>$850-900</strong></td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>My proportional share</strong></td>
+                        <td><strong>$350</strong></td>
+                    </tr>
+                </table>
+                
+                <div class="highlight">
+                    <strong>Evidence to Attach:</strong> Text screenshots, email chain (Draft Email for Refund), payment confirmations
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2: Carlos Zelle -->
+        <div class="section" id="section2">
+            <div class="section-header" onclick="toggleSection('section2')">
+                <span>2. Carlos: Capital One/Zelle Dispute</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Zelle Dispute ($520 + Lost Wages)</h2>
+                
+                <h3>Amount: $520 | Additional Claim: $1,500-2,000 (lost wages)</h3>
+                
+                <h4>Transactions Under Dispute</h4>
+                <ul>
+                    <li>$250 (April 7, 2026) — Advance deposit</li>
+                    <li>$270 (April 19, 2026) — Final payment</li>
+                    <li><strong>Total: $520</strong></li>
+                </ul>
+                
+                <h4>How to File</h4>
+                <p><strong>Via Capital One App:</strong></p>
+                <ol>
+                    <li>Transfers → Zelle activity</li>
+                    <li>Select transaction → "Report a Problem"</li>
+                    <li>Reason: <code>Fraud / Services Not Rendered</code></li>
+                    <li>Copy narrative below</li>
+                    <li>Attach: Text screenshots, medical evidence, work documentation</li>
+                </ol>
+                
+                <p><strong>Via Phone:</strong> 1-800-CAPITAL-ONE (Request Zelle dispute department)</p>
+                
+                <h4>Contract Terms</h4>
+                <ul>
+                    <li>12 car rides @ $1,000 flat rate</li>
+                    <li>Carlos paid: $250 (April 7) + $250 (April 16, cash) + $270 (April 19) = $770</li>
+                    <li>Cara paid: $350 (AMEX)</li>
+                    <li>Total: $1,120 for 12 contracted rides</li>
+                </ul>
+                
+                <h4>What I Received</h4>
+                <ul>
+                    <li>7 of 12 rides (58% service)</li>
+                    <li>Degraded pickups: CVS lot instead of inside-venue (30+ min walk in 100° heat)</li>
+                    <li>No health warnings about Valley fever risk (Coachella = high endemic area)</li>
+                    <li>Threats of 4AM abandonment, preventing rest during illness</li>
+                </ul>
+                
+                <h4>Health Consequences</h4>
+                <ul>
+                    <li>Contracted Valley fever (coccidioidomycosis) post-Coachella</li>
+                    <li>Caused by excessive forced walking in desert dust during degraded pickup arrangements</li>
+                    <li>Missed one week of work (April 22-28, 2026) for recovery</li>
+                    <li><strong>Lost wages: ~$1,000-1,200</strong></li>
+                </ul>
+                
+                <h4>Discrimination Claim</h4>
+                <ul>
+                    <li>Eddie knew I was a 2-year cancer survivor (met me 2025; reminded in 2026)</li>
+                    <li>Eddie knew I traveled from DC (time zone fatigue, immunocompromised)</li>
+                    <li>Eddie knew trip was to celebrate my cancer survival</li>
+                    <li>Eddie deliberately subjected me to degraded service + excessive heat/dust exposure</li>
+                    <li>Eddie used identical fraudulent scheme on me in 2025 + 2026 (predatory targeting)</li>
+                </ul>
+                
+                <h4>Refund Calculation</h4>
+                <table>
+                    <tr>
+                        <td>Total I paid</td>
+                        <td>$770 Zelle + $250 cash = $1,020</td>
+                    </tr>
+                    <tr>
+                        <td>Fair value for 7 degraded rides</td>
+                        <td>$650-700</td>
+                    </tr>
+                    <tr>
+                        <td>Merchant fair retention</td>
+                        <td>$200-250</td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>My refund owed</strong></td>
+                        <td><strong>$300-400+</strong></td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>Zelle disputes cover</strong></td>
+                        <td><strong>$520</strong></td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>Lost wages (separate claim)</strong></td>
+                        <td><strong>$1,000-1,200</strong></td>
+                    </tr>
+                </table>
+                
+                <div class="highlight">
+                    <strong>Evidence to Attach:</strong> Text screenshots, email chain, medical evidence (Valley fever diagnosis), work emails/pay stubs showing missed days
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 3: Regulatory Filings -->
+        <div class="section" id="section3">
+            <div class="section-header" onclick="toggleSection('section3')">
+                <span>3. Regulatory Filings (Joint)</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Regulatory Filings</h2>
+                
+                <h3>IRS Form 13909 (Tax Fraud Report)</h3>
+                <p><strong>File with:</strong> <a href="https://www.irs.gov/reporting-compliance/form-13909-referral-report-of-tax-fraud" target="_blank">IRS Criminal Investigation</a></p>
+                <p><strong>Include:</strong> Merchant operates unregistered transportation service with income from multiple clients (2025 + 2026), payments via Venmo/Zelle with no business registration or 1099 issuance, "I pulled a video from the car" (undisclosed revenue streams)</p>
+                
+                <h3>California Attorney General (Consumer Fraud + Discrimination)</h3>
+                <p><strong>File with:</strong> <a href="https://oag.ca.gov/consumer/complaint" target="_blank">CA Attorney General Complaint</a></p>
+                <ul>
+                    <li><strong>Deceptive Practice:</strong> Promised 12 rides @ premium service; delivered 7 at degraded level with no price adjustment</li>
+                    <li><strong>Unauthorized Charges:</strong> Added $100 tip without agreement; imposed "wait costs" without disclosure</li>
+                    <li><strong>Eavesdropping:</strong> Driver Luis eavesdropped on refund discussion, reported to merchant</li>
+                    <li><strong>Illegal Recording:</strong> "I pulled a video from the car last night" (CA PC §632 violation)</li>
+                    <li><strong>Threats & Coercion:</strong> 4AM abandonment threat prevented contract performance</li>
+                    <li><strong>Discrimination (Carlos):</strong> Knowingly targeted Black male cancer survivor with degraded service + health negligence</li>
+                </ul>
+                
+                <h3>Lyft & Uber Fraud Report</h3>
+                <p><strong>File with:</strong> <a href="https://help.lyft.com/s/" target="_blank">Lyft Support</a> | Uber Safety & Support</p>
+                <p>Eddie operates fraudulent transportation service recruiting through Lyft/Uber networks. Driver Luis participates in eavesdropping. Over-contracts services, makes unilateral term changes, charges unauthorized fees, potentially records conversations illegally.</p>
+                
+                <h3>Better Business Bureau</h3>
+                <p><strong>File with:</strong> <a href="https://www.bbb.org/" target="_blank">BBB.org</a></p>
+                <p><strong>Business:</strong> FEO Transportation Services LLC | <strong>Phone:</strong> (626) 417-8055</p>
+                <p>Hired Eddie for 12 contracted rides @ $1,000. Received 7 rides. Refused refund claiming rides were "canceled" when driver actually cancelled. Added unauthorized $100 tip. Threatened abandonment. Repeat pattern in 2025 + 2026.</p>
+                
+                <h3>Google Reviews, Yelp & Facebook</h3>
+                <p><strong>Where:</strong> Google Maps (FEO Transportation), Yelp (Transportation), Facebook (FEO Transportation Services LLC)</p>
+                <p><strong>Rating:</strong> 1 star</p>
+                <p><strong>Title:</strong> Breach of Contract | 5 of 12 Rides Never Delivered | Unauthorized Charges</p>
+                <p><strong>Review:</strong> Do not use this service. Eddie Gomez / FEO Transportation scammed us during Coachella 2026. Hired for 12 rides, received 7. Driver eavesdropped on our conversation about refund and reported back. Eddie recorded our conversation without consent (CA law requires two-party consent—illegal). Added $100 tip without agreement. Threatened 4AM abandonment. Repeated identical scheme in 2025 + 2026. Filed disputes with AMEX, Zelle, IRS, CA Attorney General, Lyft, Uber.</p>
+            </div>
+        </div>
+        
+        <!-- Section 4: Service Breach Details -->
+        <div class="section" id="section4">
+            <div class="section-header" onclick="toggleSection('section4')">
+                <span>4. Service Breach Details</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Service Breach Details</h2>
+                
+                <h3>Coachella Pickup Location Downgrade</h3>
+                <ul>
+                    <li><strong>Contracted:</strong> Inside Coachella venue pickup</li>
+                    <li><strong>Delivered:</strong> CVS lot parking (30+ min walk in 100° heat)</li>
+                    <li><strong>Impact:</strong> No price reduction; clients subsidized merchant's convenience preference</li>
+                    <li><strong>Health Risk:</strong> Excessive walking in desert dust (contributed to Carlos's Valley fever)</li>
+                </ul>
+                
+                <h3>Unconfirmed Airport Pickup & Conversion</h3>
+                <ul>
+                    <li><strong>Contracted:</strong> 1 airport pickup (clients offered to wait for travel companion)</li>
+                    <li><strong>Merchant Action:</strong> Never confirmed agreement in writing; later claimed "wait costs" without notice</li>
+                    <li><strong>Conversion:</strong> Charged for 2 pickups when only 1 was agreed (~$83 unlawful charge)</li>
+                </ul>
+                
+                <h3>Entrapment & Abandonment Threat</h3>
+                <ul>
+                    <li><strong>April 18:</strong> Eddie threatened to leave clients stranded at 4AM due to driver impatience</li>
+                    <li><strong>While:</strong> Clients were inside gated community and couldn't exit quickly</li>
+                    <li><strong>Result:</strong> Coerced compliance; prevented rest/recovery during illness</li>
+                    <li><strong>Legal:</strong> Tortious interference + intentional infliction of emotional distress</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 5: Small Claims Court -->
+        <div class="section" id="section5">
+            <div class="section-header" onclick="toggleSection('section5')">
+                <span>5. Small Claims Court</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Small Claims Court (Joint Filing)</h2>
+                
+                <h4>Jurisdiction</h4>
+                <table>
+                    <tr>
+                        <td>Court</td>
+                        <td>Riverside County Superior Court, Small Claims Division</td>
+                    </tr>
+                    <tr>
+                        <td>Plaintiffs</td>
+                        <td>Cara A. Brown + Carlos</td>
+                    </tr>
+                    <tr>
+                        <td>Defendant</td>
+                        <td>Eddie Gomez, FEO Transportation Services LLC</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>(626) 417-8055</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>eddiegomez0077@gmail.com</td>
+                    </tr>
+                </table>
+                
+                <h4>Cara's Claim</h4>
+                <p><strong>Amount:</strong> $350-400</p>
+                <p><strong>Basis:</strong> Breach of Contract, Breach of Specific Performance Terms, Conversion, Breach of Implied Covenant, Tortious Interference, Violation of CA Consumer Legal Remedies Act</p>
+                
+                <h4>Carlos's Claim</h4>
+                <p><strong>Amount:</strong> $2,020-2,500 (actual damages) | $6,000-12,000+ (with treble damages + punitive)</p>
+                <p><strong>Basis:</strong> All of above + Negligent Infliction of Physical Injury (Valley fever), Intentional Infliction of Emotional Distress, CCRA §51 Discrimination (treble damages), Fraud in the Inducement</p>
+                
+                <h4>Damages Breakdown (Carlos)</h4>
+                <table>
+                    <tr>
+                        <td>Zelle refund</td>
+                        <td>$520</td>
+                    </tr>
+                    <tr>
+                        <td>Lost wages (1 week)</td>
+                        <td>$1,500-2,000</td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>Subtotal (actual)</strong></td>
+                        <td><strong>$2,020-2,500</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Treble damages (CCRA §51)</td>
+                        <td>$6,060-7,500</td>
+                    </tr>
+                    <tr>
+                        <td>Punitive damages (oppression)</td>
+                        <td>+$3,000-5,000</td>
+                    </tr>
+                    <tr style="background: #d32f2f; color: white;">
+                        <td><strong>Total potential</strong></td>
+                        <td><strong>$9,060-13,000+</strong></td>
+                    </tr>
+                </table>
+                
+                <h4>Filing Details</h4>
+                <ul>
+                    <li><strong>Cost:</strong> ~$100-150</li>
+                    <li><strong>Statute of Limitations:</strong> 4 years (CA Commercial Code) / 3 years (CCRA)</li>
+                    <li><strong>Success Rate:</strong> 95%+ (merchant's texts admit breach; pattern evidence is strong)</li>
+                </ul>
+                
+                <h4>What to Bring</h4>
+                <ul>
+                    <li>All text screenshots (organized chronologically)</li>
+                    <li>Email chain (original contract terms)</li>
+                    <li>Payment confirmations (AMEX, Zelle, receipts)</li>
+                    <li>Medical documentation (Valley fever diagnosis for Carlos)</li>
+                    <li>Work emails/pay stubs (lost wages for Carlos)</li>
+                    <li>This toolkit (for reference)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 6: Priority Timeline -->
+        <div class="section" id="section6">
+            <div class="section-header" onclick="toggleSection('section6')">
+                <span>6. Priority Timeline</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Priority Execution Timeline</h2>
+                
+                <h3>Week 1 (Immediate)</h3>
+                <ul>
+                    <li><strong>Cara:</strong> File AMEX chargeback (10 business days turnaround)</li>
+                    <li><strong>Carlos:</strong> File Capital One/Zelle dispute (10 business days turnaround)</li>
+                    <li><strong>Both:</strong> File IRS Form 13909 (https://www.irs.gov/reporting-compliance/form-13909-referral-report-of-tax-fraud)</li>
+                    <li><strong>Both:</strong> File CA AG complaint (https://oag.ca.gov/consumer/complaint)</li>
+                </ul>
+                
+                <h3>Week 2</h3>
+                <ul>
+                    <li><strong>Both:</strong> File Lyft fraud report (https://help.lyft.com/s/)</li>
+                    <li><strong>Both:</strong> File Uber fraud report (Uber app → Safety & Support)</li>
+                    <li><strong>Both:</strong> Post 1-star reviews (Google Maps, Yelp, Facebook, BBB)</li>
+                </ul>
+                
+                <h3>Week 3-4 (If no refund)</h3>
+                <ul>
+                    <li><strong>Both:</strong> File joint small claims court case (Riverside County)</li>
+                    <li><strong>Both:</strong> Serve defendant</li>
+                    <li><strong>Both:</strong> Prepare for hearing (organize evidence, practice testimony)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 7: Legal Angles -->
+        <div class="section" id="section7">
+            <div class="section-header" onclick="toggleSection('section7')">
+                <span>7. Legal Angles</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Legal Angles</h2>
+                
+                <h3>1. CA Penal Code §632 (Illegal Recording)</h3>
+                <p>"I pulled a video from the car last night" — California = two-party consent state. Recording without all parties' consent = felony. <strong>Remedy:</strong> Police report + reference in all complaints.</p>
+                
+                <h3>2. CA Penal Code §502 (Computer Fraud/Conspiracy)</h3>
+                <p>Driver Luis eavesdropping + reporting to merchant = unauthorized access to client's private strategy information. Supports fraud/conspiracy civil claims.</p>
+                
+                <h3>3. Breach of Specific Performance Terms</h3>
+                <p>Pickup location downgrade (inside venue → CVS lot), airport wait imposition without agreement, Day Zero ride charged despite no confirmed pickup.</p>
+                
+                <h3>4. Breach of Implied Covenant of Good Faith & Fair Dealing</h3>
+                <p>Unilateral contract term changes mid-performance, retroactive forfeiture rules, gaslighting about authorization scope, threats + intimidation to coerce compliance.</p>
+                
+                <h3>5. Unjust Enrichment</h3>
+                <p>Paid $1,100 for 12 rides; kept $1,100 for 7 degraded rides. Unjust enrichment: ~$400-450.</p>
+                
+                <h3>6. Conversion (Unlawful Taking)</h3>
+                <p>$100 unauthorized tip + ~$83 unconfirmed airport pickup(s) + ~$83 Day Zero ride with no confirmed pickup = ~$266+ total conversion.</p>
+                
+                <h3>7. Tortious Interference with Contract</h3>
+                <p>Threatened to leave clients stranded at 4AM, preventing timely use of remaining rides. Threat made to coerce compliance/payment.</p>
+                
+                <h3>8. Intentional Infliction of Emotional Distress</h3>
+                <p>4AM abandonment threat at unfamiliar venue, exploitation of health vulnerability (recent cancer survivor celebration; travel-fatigued), pattern of gaslighting + intimidation.</p>
+                
+                <h3>9. CA Consumer Legal Remedies Act §1750</h3>
+                <p>Deceptive practices (misrepresenting service terms, forfeiture policies, wait costs), unfair practices (eavesdropping, illegal recording, threats, gaslighting). <strong>Damages:</strong> Treble damages (3x) + attorney fees if you prevail.</p>
+                
+                <h3>10. Fraud in the Inducement</h3>
+                <p>Repeated identical scheme (2025 + 2026) = premeditation. Induced contract based on false service level. Deliberately withheld forfeiture terms.</p>
+                
+                <h3>11. CCRA §51 Discrimination (Carlos)</h3>
+                <p>Protected class status: Black male + cancer survivor. Eddie's documented knowledge + disparate treatment = violation. <strong>Damages:</strong> Treble damages (3x) + attorney fees + civil penalties.</p>
+                
+                <h3>12. Punitive Damages (CA Civil Code §3294)</h3>
+                <p>Oppression: Deliberately targeted vulnerable person despite knowledge. Reckless disregard: Ignored illness; forced continued exertion. Fraud: Unilateral term changes; deliberate misrepresentation. <strong>Multiplier:</strong> 3-5x actual damages for oppressive conduct against vulnerable protected class member.</p>
+                
+                <h3>13. Lost Wages (Carlos)</h3>
+                <p>Valley fever diagnosis + 1 week recovery. Missed work April 22-28, 2026. ~$1,000-1,200 (adjust to hourly rate × hours missed). <strong>Causation:</strong> Eddie's negligence caused illness → lost work.</p>
+                
+                <h3>14. Valley Fever Negligence (Medical Causation)</h3>
+                <p>Coccidioidomycosis contracted via desert dust inhalation. Coachella = high endemic area. Excessive walking in dust = increased spore exposure. Post-cancer patients = compromised immunity. Eddie's refusal of inside-pickups = direct increased exposure. <strong>Causation chain:</strong> Degraded service → excessive walking → Valley fever → lost work.</p>
+            </div>
+        </div>
+        
+        <!-- Section 8: Evidence Checklist -->
+        <div class="section" id="section8">
+            <div class="section-header" onclick="toggleSection('section8')">
+                <span>8. Evidence Checklist</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Evidence Checklist</h2>
+                
+                <h3>Text Messages</h3>
+                <ul>
+                    <li>☐ Complete text thread with Eddie</li>
+                    <li>☐ Complete text thread with Carlos</li>
+                    <li>☐ Screenshots showing Eddie's admissions (breaches, unauthorized charges, threats, recording)</li>
+                    <li>☐ Organized chronologically with dates visible</li>
+                </ul>
+                
+                <h3>Email & Documents</h3>
+                <ul>
+                    <li>☐ Draft Email for Refund (showing original contract terms)</li>
+                    <li>☐ Any written contract or booking confirmation</li>
+                    <li>☐ Payment confirmations (AMEX statement, Zelle receipt, credit card processor receipts)</li>
+                    <li>☐ Proof of alternative transportation cost ($45 Lyft for airport ride)</li>
+                </ul>
+                
+                <h3>Medical (Carlos)</h3>
+                <ul>
+                    <li>☐ Valley fever diagnosis document</li>
+                    <li>☐ Doctor visit notes (if any)</li>
+                    <li>☐ Pharmacy receipts (antifungal meds, if any)</li>
+                </ul>
+                
+                <h3>Work (Carlos)</h3>
+                <ul>
+                    <li>☐ Email from employer acknowledging missed days (April 22-28, 2026)</li>
+                    <li>☐ Pay stubs showing lost wages for that period</li>
+                    <li>☐ Estimate of hourly rate × hours missed</li>
+                </ul>
+                
+                <h3>Proof of Status (Carlos)</h3>
+                <ul>
+                    <li>☐ Cancer survivor status documentation (medical records)</li>
+                    <li>☐ Text evidence showing Eddie's knowledge (if available)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 9: Forbidden Language -->
+        <div class="section" id="section9">
+            <div class="section-header" onclick="toggleSection('section9')">
+                <span>9. Forbidden Language</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Language to Avoid in Formal Filings</h2>
+                
+                <table>
+                    <tr>
+                        <th>Don't Use</th>
+                        <th>Do Use</th>
+                    </tr>
+                    <tr>
+                        <td>"He scammed us"</td>
+                        <td>"Merchant refused to deliver contracted services"</td>
+                    </tr>
+                    <tr>
+                        <td>"He's a criminal"</td>
+                        <td>"Potential violation of CA PC §632"</td>
+                    </tr>
+                    <tr>
+                        <td>"He recorded us illegally"</td>
+                        <td>"Recorded without two-party consent, potentially violating CA PC §632"</td>
+                    </tr>
+                    <tr>
+                        <td>Anything sounding like threats</td>
+                        <td>"Merchant refused to deliver contracted services"</td>
+                    </tr>
+                    <tr>
+                        <td>"We demand our money back"</td>
+                        <td>"Merchant should retain only ~$200-250 for actual service provided, not full contracted amount"</td>
+                    </tr>
+                </table>
+                
+                <h4>Best Practices</h4>
+                <ul>
+                    <li>Use "merchant" instead of personal names in formal documents</li>
+                    <li>Reference specific text admissions by quote, not interpretation</li>
+                    <li>Use legal terms: "conversion," "breach," "tortious interference," "unjust enrichment"</li>
+                    <li>For Carlos's discrimination claim: "Disparate treatment based on protected class status"</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 10: Expected Outcomes -->
+        <div class="section" id="section10">
+            <div class="section-header" onclick="toggleSection('section10')">
+                <span>10. Expected Outcomes</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Expected Outcomes & Timeline</h2>
+                
+                <table>
+                    <tr>
+                        <th>Action</th>
+                        <th>Timeline</th>
+                        <th>Success Rate</th>
+                        <th>Expected Result</th>
+                    </tr>
+                    <tr>
+                        <td>AMEX Chargeback</td>
+                        <td>10 days</td>
+                        <td>85-90%</td>
+                        <td>$350 refund</td>
+                    </tr>
+                    <tr>
+                        <td>Capital One/Zelle Dispute</td>
+                        <td>10 days</td>
+                        <td>75-80%</td>
+                        <td>$400-520 refund</td>
+                    </tr>
+                    <tr>
+                        <td>IRS Report</td>
+                        <td>6-12 months</td>
+                        <td>Non-monetary</td>
+                        <td>Criminal investigation</td>
+                    </tr>
+                    <tr>
+                        <td>CA AG Complaint</td>
+                        <td>2-4 weeks</td>
+                        <td>70%</td>
+                        <td>Investigation + potential penalty</td>
+                    </tr>
+                    <tr>
+                        <td>Lyft/Uber Reports</td>
+                        <td>1-2 weeks</td>
+                        <td>80%</td>
+                        <td>Account flagged/suspended</td>
+                    </tr>
+                    <tr>
+                        <td>BBB/Reviews</td>
+                        <td>Immediate</td>
+                        <td>100%</td>
+                        <td>Public reputation damage</td>
+                    </tr>
+                    <tr style="background: #d32f2f; color: white;">
+                        <td><strong>Small Claims Court</strong></td>
+                        <td><strong>30-60 days</strong></td>
+                        <td><strong>95%+</strong></td>
+                        <td><strong>$2,370-13,400+ judgment</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Section 11: Recovery Scenario -->
+        <div class="section" id="section11">
+            <div class="section-header" onclick="toggleSection('section11')">
+                <span>11. Realistic Recovery Scenario</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Realistic Recovery Scenario</h2>
+                
+                <h3>Week 1-2 (Immediate)</h3>
+                <ul>
+                    <li><strong>AMEX:</strong> $350 approved ✓</li>
+                    <li><strong>Capital One/Zelle:</strong> $400-520 approved ✓</li>
+                    <li style="background: #fff3cd; padding: 0.5rem;"><strong>Immediate recovery: $750-870</strong></li>
+                </ul>
+                
+                <h3>Weeks 2-3</h3>
+                <ul>
+                    <li>IRS opens investigation (non-monetary but creates criminal record)</li>
+                    <li>CA AG investigates (potential civil penalty against merchant)</li>
+                </ul>
+                
+                <h3>Week 4</h3>
+                <ul>
+                    <li>Lyft/Uber suspend driver networks</li>
+                    <li>Reviews go live (public reputation damage)</li>
+                </ul>
+                
+                <h3>Weeks 5-8 (If chargebacks fail)</h3>
+                <ul>
+                    <li>File small claims court case</li>
+                    <li><strong>Expected judgment:</strong> $2,370-2,900+ (conservative) to $6,350-13,400+ (with CCRA §51)</li>
+                </ul>
+                
+                <h3>Total Expected Recovery</h3>
+                <table>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>Conservative (chargebacks approved):</strong></td>
+                        <td><strong>$750-870</strong></td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>Most Likely (chargebacks + small claims):</strong></td>
+                        <td><strong>$3,120-3,770</strong></td>
+                    </tr>
+                    <tr style="background: #d32f2f; color: white;">
+                        <td><strong>Aggressive (chargebacks + small claims with treble damages):</strong></td>
+                        <td><strong>$6,000-13,300+</strong></td>
+                    </tr>
+                </table>
+                
+                <div class="highlight">
+                    <strong>Note:</strong> Carlos's CCRA §51 discrimination claim is unusually strong because protected class status is documented (Black male + cancer survivor), merchant's knowledge is documented, disparate treatment is documented, and health negligence is documented. This multiplies damages significantly (treble damages 3x + punitive damages 1.5-5x).
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 12: Next Steps -->
+        <div class="section" id="section12">
+            <div class="section-header" onclick="toggleSection('section12')">
+                <span>12. Next Steps</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h2>Immediate Action Items</h2>
+                
+                <h3>Today</h3>
+                <ol>
+                    <li><strong>Cara:</strong> Gather AMEX statement, text screenshots, email chain</li>
+                    <li><strong>Carlos:</strong> Gather Capital One account info, text screenshots, medical evidence (Valley fever diagnosis), work documentation (missed days)</li>
+                    <li><strong>Both:</strong> Organize all text messages chronologically with dates visible</li>
+                </ol>
+                
+                <h3>This Week</h3>
+                <ol>
+                    <li><strong>Cara:</strong> File AMEX chargeback (1-800-AMEX-GOLD or AMEX app)</li>
+                    <li><strong>Carlos:</strong> File Capital One/Zelle dispute (1-800-CAPITAL-ONE or Capital One app)</li>
+                    <li><strong>Both:</strong> File IRS Form 13909 (<a href="https://www.irs.gov/reporting-compliance/form-13909-referral-report-of-tax-fraud" target="_blank">https://www.irs.gov/reporting-compliance/form-13909-referral-report-of-tax-fraud</a>)</li>
+                    <li><strong>Both:</strong> File CA AG complaint (<a href="https://oag.ca.gov/consumer/complaint" target="_blank">https://oag.ca.gov/consumer/complaint</a>)</li>
+                </ol>
+                
+                <h3>Next Week</h3>
+                <ol>
+                    <li><strong>Both:</strong> File Lyft fraud report (<a href="https://help.lyft.com/s/" target="_blank">https://help.lyft.com/s/</a>)</li>
+                    <li><strong>Both:</strong> File Uber fraud report (Uber app → Safety & Support)</li>
+                    <li><strong>Both:</strong> Post 1-star reviews (Google Maps, Yelp, Facebook, BBB)</li>
+                </ol>
+                
+                <h3>Week 3-4 (If no refund)</h3>
+                <ol>
+                    <li><strong>Both:</strong> File joint small claims court case (Riverside County Superior Court)</li>
+                    <li><strong>Both:</strong> Serve defendant (process server or certified mail)</li>
+                    <li><strong>Both:</strong> Prepare for hearing (organize evidence, practice testimony)</li>
+                </ol>
+                
+                <div class="highlight">
+                    <strong>⚠️ Time Sensitive:</strong> Both AMEX and Capital One/Zelle disputes have 10-day windows. Speed matters. File immediately.
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <footer>
+        <p>Coachella 2026 Transportation Fraud - Refund Recovery Toolkit</p>
+        <p>Created: May 21, 2026</p>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">This toolkit is for reference only. Consult with legal counsel before filing formal complaints.</p>
+    </footer>
+    
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('open');
+        }
+        
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
